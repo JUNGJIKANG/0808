@@ -16,7 +16,18 @@ public class Input {
 		} catch (FileNotFoundException e) {
 			System.out.println("404 Not Found");
 		}
-		this.file = file;
+	}
+
+	public void fileInput() {
+		for (int i = 0; i < array.length; i++) {
+			String line = this.sc.nextLine(); // 1101줄 읽음.
+//			String[]values=line.split("\\s+");
+//			System.out.println(values[0]);
+			Scanner myScanner = new Scanner(line);
+			myScanner = myScanner.useDelimiter("\\s+");
+			this.array[i] = new Student(myScanner.next(), myScanner.next(), myScanner.nextInt(), myScanner.nextInt(),
+					myScanner.nextInt(), myScanner.nextInt());
+		}
 	}
 
 }
